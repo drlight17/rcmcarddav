@@ -124,6 +124,11 @@ EOF
 	);
 
 	$reply = self::$helper->cdfopen($url, $opts, $cdfopen_cfg);
+	if ($reply["status"] >= 400) { # something went wrong, unprovisioned preset?
+		# ownCloud and NextCloud do not provision users if they authenticate via DAV.
+		# Should really report this nonsense to them.
+		return false;
+	}
 	$xml = self::$helper->checkAndParseXML($reply);
 	if($xml === false) return false;
 
