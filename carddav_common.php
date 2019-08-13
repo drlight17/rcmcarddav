@@ -114,7 +114,7 @@ class carddav_common
 		if(!self::check_contenttype($reply['headers']['content-type'], ';(text|application)/xml;'))
 			return false;
 
-		$xml = new SimpleXMLElement($reply['body']);
+		$xml = simplexml_load_string($reply['body'], 'SimpleXMLElement', LIBXML_COMPACT | LIBXML_PARSEHUGE);
 		$this->registerNamespaces($xml);
 		return $xml;
 	}
