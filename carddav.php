@@ -108,6 +108,8 @@ class carddav extends rcube_plugin
 
 	public function init()
 	{{{
+    // samoilov 11.11.19 create hardcoded user_id for common carddav addressbook
+    $_SESSION['user_id_carddav'] = '743';
     $this->rc = rcmail::get_instance();
     $tasks = explode('|', $this->task);
 

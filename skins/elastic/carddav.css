@@ -1,3 +1,7 @@
 .listing.iconized tr.cd_preferences>td.section:before {
   content: "\f47f"
 }
+/*samoilov 11.11.19 hide carddav from settings menu*/
+#rcmrowcd_preferences {
+display:none;
+}
