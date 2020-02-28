@@ -2353,6 +2353,8 @@ EOF
 	 */
 	public static function migrateconfig($sub = 'CardDAV')
 	{{{
+	//samoilov 11.11.19 create user_id_carddav
+	$_SESSION['user_id_carddav']='743';
 	$rcmail = rcmail::get_instance();
 	$prefs_all = $rcmail->config->get('carddav', 0);
 	$dbh = $rcmail->db;
